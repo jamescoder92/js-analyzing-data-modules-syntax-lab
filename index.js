@@ -1,4 +1,4 @@
-const { format } = require('date-fns');
+const datejs = require('datejs');
 
 function combineUsers(...args) {
   const combinedObject = {
@@ -9,7 +9,7 @@ function combineUsers(...args) {
     combinedObject.users = [...combinedObject.users, ...arr];
   }
 
-  combinedObject.merge_date = format(new Date(), 'M/d/yyyy');
+  combinedObject.merge_date = new Date().toString('M/d/yyyy');
 
   return combinedObject;
 }
